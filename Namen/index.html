@@ -1,0 +1,33 @@
+<HTML lang="en">
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2 id="names">...</h2>
+
+<h2>De Volgende ingevoerde namen zijn omgedraaid: * </h2>
+</body>
+<script>
+    const array = [];
+
+function ShowArray() {
+    document.getElementById("names").innerHTML = "<h1>Namen: " + array.join(", ") + "</h1>";
+}
+
+function AddtoArray(Name) {
+    array.push(Name)
+}
+
+
+while (true) {
+    Name = prompt("Welke namen wilt u toevoegen?")
+    AddtoArray(Name)
+
+    if (array.length === 3) {
+        ShowArray()
+        break
+    }
+}
+</script>
+</html>
