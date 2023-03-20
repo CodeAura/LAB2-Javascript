@@ -1,0 +1,70 @@
+<html>
+    <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>+ Optellen +</h1>
+        <div id="plus">
+
+        </div>
+        <h1>- Aftrekken -</h1>
+        <div id="minus">
+
+        </div>
+        <h1>* Keer *</h1>
+        <div id="keren">
+
+        </div>
+    	<h1>/ Delen /</h1>
+        <div id="delen">
+
+        </div>
+    </body>
+
+    <script async>
+
+    // Ik weet dit is totaal niet DRY geschreven. Maar ik kreeg de HTML DOM element niet dry.
+
+        const array1 = [1,2,3,4,5,6,7,8,9,10];
+        const array2 = [2,4,6,8,10,12,14,16,18,20];
+
+        function PutOnSite(plus,minus,keren,delen) {
+            const loopResults1 = document.getElementById('plus')
+            const loopResults2 = document.getElementById('minus')
+            const loopResults3= document.getElementById('keren')
+            const loopResults4 = document.getElementById('delen')
+            const result1 = document.createElement('p');
+            const result2 = document.createElement('p');
+            const result3 = document.createElement('p');
+            const result4 = document.createElement('p');
+            result1.textContent = plus;
+            result2.textContent = minus;
+            result3.textContent = keren;
+            result4.textContent = delen;
+            loopResults1.appendChild(result1);
+            loopResults2.appendChild(result2);
+            loopResults3.appendChild(result3);
+            loopResults4.appendChild(result4);
+        }
+
+
+        function Reken(i, plussom,min,keer,delen) {
+            plus = array1[i] + " + " + array2[i] + " = " + plussom;
+            minus = array2[i] + " - " + array1[i] + " = " + min;
+            keren = array1[i] + " * " + array2[i] + " = " + keer;
+            delen = array2[i] + " / " + array1[i] + " = " + delendoor;
+            PutOnSite(plus,minus,keren,delen);
+        }
+
+        for (let i = 0; i < array1.length; i++) {
+            array2.length + i
+            plussom = array1[i] + array2[i];
+            min = array2[i] - array1[i];
+            keer = array1[i] * array2[i];
+            delendoor = array2[i] / array1[i];
+
+            Reken(i, plussom, min, keer, delendoor)
+        }
+    </script>
+</html>
