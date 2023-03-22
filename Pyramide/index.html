@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+    <h1>Pyramid</h1>
+
+    <div id="build-pyramid">
+
+    </div>
+
+    </body>
+    <script>
+    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+    function MakePyramid(input) {
+        string = ""
+        for (var i = 0; i < input; i++) {
+            string+= array[i] 
+            const loopResults = document.getElementById('build-pyramid')
+            const result = document.createElement('p');
+            result.textContent = string;
+            loopResults.appendChild(result);
+        }
+    }
+
+    function AskNumber() {
+        input = prompt("Voer een getal in: ")
+        if (input <= 20) {
+            MakePyramid(input)
+        } else if (input >= 20)  {
+            alert("Please enter a number lower then 20")
+            AskNumber() 
+        }
+    }
+
+    AskNumber()
+    </script>
+</html>
