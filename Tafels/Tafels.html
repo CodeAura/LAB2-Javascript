@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h2>Tafel van 2:</h2>
+        <div id="2">
+            
+        </div>
+    </div>
+    <div>
+        <h2>Tafel van 4:</h2>
+        <div id="4">
+            
+        </div>
+    </div>
+    <div>
+        <h2>Tafel van 6:</h2>
+        <div id="6">
+            
+        </div>
+    </div>
+    <div>
+        <h2>Tafel van 8:</h2>
+        <div id="8">
+            
+        </div>
+    </div>
+</body>
+
+<script>
+
+var num = [1,2,3,4,5,6,7,8,9,10];
+var tafels = [2,4,6,8];
+
+var ids = ["2","4","6","8"];
+
+tafels.forEach((tafel,index) => {
+    num.forEach((num1) =>{
+        som = "<div>" + num1 + " * " + tafel + " = " + (num1 * tafel) + "</div>";
+        $("#"+ids[index]).append(som);
+    });
+});
+
+</script>
+</html>
